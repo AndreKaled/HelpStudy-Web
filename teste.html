@@ -7,7 +7,7 @@
     <title>HelpStudy</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://kit.fontawesome.com/e61906304e.js" crossorigin="anonymous"></script>
-
+    <script src="js/flashcard.js"></script>
 </head>
 <body>
     <header>
@@ -19,5 +19,20 @@
             <a href="teste.html">Teste agora</a>
         </nav>
     </header>
+
+    <section>
+        <div class="container-introducao">
+            <form action="" class="adicionar" id="criarFlashcard">
+                <label class="label-titulo">Flashcards</label><br>
+                <input id="titulo_flashcard" type="text" placeholder="Digite o título para o flashcard" size="30"><br>
+                <input id="resposta_flashcard" type="text" placeholder="Digite a resposta do flashcard" size="30"><br>
+                <input type="submit">
+            </form>
+            <hr>
+            <ul id="lista">
+                
+            </ul>
+        </div>
+    </section>
 </body>
 </html>

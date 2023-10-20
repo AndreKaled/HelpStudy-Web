@@ -55,7 +55,7 @@ function criarElemento(item){
     novoItem.appendChild(nomeItem);
     novoItem.innerHTML += item.resposta;
 
-    //novoItem.appendChild(botaoDeletar(item.id));
+    novoItem.appendChild(botaoDeletar(item.id));
 
     lista.appendChild(novoItem);
 }

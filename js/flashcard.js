@@ -2,23 +2,23 @@
 
 const list = JSON.parse(localStorage.getItem("flashcards"))||[];
 const lista = document.getElementById('lista');
-const form = document.getElementById('criarFlashcard');
+const form = document.getElementById("criarFlashcard");
 
 list.forEach(element => {
     criarElemento(element);
 });
 
-form.addEventListener("submit", (evento) => {
+form.addEventListener('submit', function(evento){
     evento.defaultPrevented();
     
-    const titulo_flashcard = evento.target.elements[""];
-    const resposta_flashcard = evento.target.elements["quantidade"];
+    const titulo_flashcard = evento.target.elements["titulo_flashcard"];
+    const resposta_flashcard = evento.target.elements["resposta_flashcard"];
     
     //verificando existencia na lista
     const existe = list.find( (elemento) => elemento.titulo === titulo_flashcard.value);
 
     const itemAtual = {
-        "titulo": titulo.value,
+        "titulo": titulo_flashcard.value,
         "resposta": resposta_flashcard.value,
     }
 
@@ -39,7 +39,8 @@ form.addEventListener("submit", (evento) => {
      //adicionando lista no localstorage, com chave e valor
      localStorage.setItem("itens", JSON.stringify(itens));
 
-});
+}
+);
 
 //criando e adicionando elemento com os dados na lista
 function criarElemento(item){

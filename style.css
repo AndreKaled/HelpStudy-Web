@@ -52,15 +52,15 @@ nav {
 }
 
 
-nav a {
+a {
     color: #6FFFBA;
     text-decoration: none;
     margin: 2%;
 }
 
 
-nav a:hover,
-nav a:focus {
+a:hover,
+a:focus {
     transition: 0.6s;
     color: #148CFC;
 }

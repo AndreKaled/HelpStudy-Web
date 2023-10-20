@@ -80,7 +80,7 @@ function deletaElemento(tag, id){
     tag.remove();
 
     //removendo item do array e sobreescrevendo o localstorage
-    itens.splice(itens.findIndex( elemento => elemento.id === id), 1);
-    console.log(itens)
-    localStorage.setItem("flashcards", JSON.stringify(itens));
+    list.splice(list.findIndex( elemento => elemento.id === id), 1);
+    console.log(list)
+    localStorage.setItem("flashcards", JSON.stringify(list));
 }

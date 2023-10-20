@@ -1,15 +1,15 @@
 
 
 const list = JSON.parse(localStorage.getItem("flashcards"))||[];
-const lista = document.getElementById('lista');
+const lista = document.getElementById("lista");
 const form = document.getElementById("criarFlashcard");
 
 list.forEach(element => {
     criarElemento(element);
 });
 
-form.addEventListener('submit', function(evento){
-    evento.defaultPrevented();
+form.addEventListener('submit', (evento) =>{
+    //evento.defaultPrevented()
     
     const titulo_flashcard = evento.target.elements["titulo_flashcard"];
     const resposta_flashcard = evento.target.elements["resposta_flashcard"];
@@ -26,9 +26,9 @@ form.addEventListener('submit', function(evento){
     if(existe){
         itemAtual.id = existe.id
         atualizarItem(itemAtual);
-        itens[itens.findIndex( elemento => elemento.id === existe.id)] = itemAtual;
+        list[list.findIndex( elemento => elemento.id === existe.id)] = itemAtual;
     }else{
-        itemAtual.id = itens[itens.length-1] ? (itens[itens.length-1].id) +1 : 0
+        itemAtual.id = list[list.length-1] ? (list[list.length-1].id) +1 : 0
         criarElemento(itemAtual);
 
         //armazenando dados no localstorage do navegador
@@ -37,7 +37,7 @@ form.addEventListener('submit', function(evento){
     }
 
      //adicionando lista no localstorage, com chave e valor
-     localStorage.setItem("itens", JSON.stringify(itens));
+     localStorage.setItem("flashcards", JSON.stringify(list));
 
 }
 );
@@ -45,8 +45,6 @@ form.addEventListener('submit', function(evento){
 //criando e adicionando elemento com os dados na lista
 function criarElemento(item){
     const novoItem = document.createElement('li');
-
-    novoItem.classList.add('item');
 
     const nomeItem = document.createElement('strong');
     nomeItem.innerHTML = item.titulo;
@@ -57,7 +55,7 @@ function criarElemento(item){
     novoItem.appendChild(nomeItem);
     novoItem.innerHTML += item.resposta;
 
-    novoItem.appendChild(botaoDeletar(item.id));
+    //novoItem.appendChild(botaoDeletar(item.id));
 
     lista.appendChild(novoItem);
 }

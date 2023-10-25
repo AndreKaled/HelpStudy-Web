@@ -125,8 +125,6 @@ p {
 }
 
 .container-card-elementos img {
-
-
     width: 5em;
     height: 5em;
     border-radius: 50%;
@@ -136,7 +134,7 @@ p {
 .container-apresentacao {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
 }
 
 
@@ -151,10 +149,14 @@ p {
     border-radius: 2em 0em 0em 2em;
     color: #191919;
     margin: 1em;
-    flex-wrap: nowrap;
+}
+
+.link-interno:hover, .link-interno:focus{
+    color: #191919;
 }
 
 .foto-perfil{
     border-radius: 100%;
-    height: 10em;
+    height: 15em;
+    width: 15em;
 }

@@ -27,6 +27,7 @@ header {
 @media (max-width: 800px) {
     section{
         max-width: 800px;
+    
     }
     .label-texto{
         font-size: 0.8em;
@@ -35,9 +36,8 @@ header {
 
 
 nav {
-    width: 200px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     margin-right: 50px;
 }
 
@@ -91,17 +91,17 @@ p {
 
 
 .label-titulo {
-    font-size: 2.5em;
+    font-size: 1.8em;
     font-weight: 1000;
+    text-indent: 1em;
+    margin: 1.3em 0;
 }
-
 
 .label-texto {
     font-size: 1.25em;
-    margin: 2%;
+    margin: 4%;
     text-align: justify;
 }
-
 
 .container-card {
     display: flex;
@@ -131,6 +131,9 @@ p {
     background-color: #09aa5cb6;
 }
 
+
+/*pagina de contatos*/
+
 .container-apresentacao {
     display: flex;
     flex-direction: column;
@@ -144,11 +147,12 @@ p {
     justify-content: space-between;
     align-items: center;
     background-color: #148CFC;
-    width: 50em;
+    width: 100;
+    height: auto;
     padding: 2em 0em 2em 2em;
     border-radius: 2em 0em 0em 2em;
     color: #191919;
-    margin: 1em;
+    margin: 0 10%;
 }
 
 .link-interno:hover, .link-interno:focus{
@@ -159,4 +163,50 @@ p {
     border-radius: 100%;
     height: 15em;
     width: 15em;
+}
+
+@media screen and (max-width: 900px) {
+	   
+    .container-card{
+
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-card-elementos{
+
+        margin: 1em 0;
+    }
+
+
+    .label-texto{
+
+        font-size: 1em;
+        margin: 6%;
+    }
+
+    .container-card-elementos > p{
+
+        text-align: left;
+        font-size: 0.9em;
+
+    }
+
+
+    .label-titulo{
+
+        font-size: 1.5em;
+        text-indent: 0.5em;
+    }
+
+
+    /* .container-apresentacao-elementos{
+
+        ;
+    } */
+
+
 }

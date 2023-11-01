@@ -12,6 +12,7 @@
 <body>
 
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
     <script src="js/firebase.js"></script>
 
      <header>
@@ -42,14 +43,14 @@
             </p>
             <p class="label-texto">Ou converse os criadores diretamente em<a href="sobre.html">sobre nós.</a></p>
         
-        
             <p class="label-texto">Se desejar, adicione um comentário logo abaixo que logo 
                 seremos notificados e entraremos em contato em breve 😉</p>
             <form id="form">
+                <img src="images/loading.gif" width="20%" id="load">
                 <p class="label-texto">Nome: <input id="nome" name="nome" type="text" placeholder="teu nome"></p>
                 <p class="label-texto">Email: <input id="email" name="email" type="text" placeholder="teu email"></p>
                 <p class="label-texto">Seu comentário: <input id="comentario" name="comentario" type="text" placeholder="teu pai"></p>
-                <input type="submit">
+                <button type="button" name="botaoenviar" id="botaoenviar" onclick="comentar()">Enviar</button>
             </form>
         </div>
     </section>
@@ -63,6 +64,6 @@
             <i class="fa-regular fa-envelope fa-lg"></i> <a>helpStudy@gmail.com</a>
         </div>
     </footer>
+    <script src="js/comentario.js"></script>
 </body>
-<script src="js/comentario.js"></script>
 </html>

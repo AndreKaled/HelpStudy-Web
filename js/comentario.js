@@ -3,18 +3,40 @@ const form = document.getElementById('form')
 campoNome = document.getElementById('nome')
 campoEmail = document.getElementById('email')
 campoComentario = document.getElementById('comentario')
+botao = document.getElementById('botaoenviar')
 
-form.addEventListener('submit', (event) => {
-	var nome = campoNome.value,
-	email = campoEmail.value,
-	comentario = campoComentario.value;
-	enviaComentario(nome,email,comentario)
-})
+fechaCarregando()
+
+function comentar(){
+	iniciaCarregando()
+	enviaComentario(campoNome.value,campoEmail.value,campoComentario.value)
+}
 
 function enviaComentario(nome, email, comentario){
-	database.ref('comentarios/' +1).set({
+	firebase.firestore().collection('comentarios-web').add({
 		"nome": nome,
 		"email": email,
-		"comentario": comentario
-	})
+		"comentario": comentario,
+		"curtidas": 0
+	}).then((val) => (fechaCarregando(),
+			campoComentario.value = "",
+			campoEmail.value = "",
+			campoNome.value = "")
+	).catch((err) => console.error(err));
+}
+
+function iniciaCarregando(){
+	document.getElementById("load").style.display = "inline"
+	campoComentario.disabled = "false"
+	campoNome.disabled = "false"
+	campoEmail.disabled = "false"
+	botao.disabled = "false"
+}
+
+function fechaCarregando(){
+	document.getElementById('load').style.display = "none"
+	campoComentario.disabled = "true"
+	campoNome.disabled = "true"
+	campoEmail.disabled = "true"
+	botao.disabled = "true"
 }

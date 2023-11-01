@@ -92,6 +92,18 @@ p {
     text-align: center;
 }
 
+.container-introducao > .adicionar > .flash-submit{
+
+    background-color: #c7e4ff;
+    color: #191919;
+    font-weight: 700;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    border: none;
+    margin: 0.5em 0;
+
+}
+
 
 .label-titulo {
     font-size: 1.8em;
@@ -140,22 +152,21 @@ p {
 .container-apresentacao {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: space-around;
+    align-items: center;
 }
 
-
 .container-apresentacao-elementos {
+
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
     background-color: #148CFC;
-    width: 100;
+    width: 50%;
     height: auto;
+    margin: 1em 0;
     padding: 2em 0em 2em 2em;
-    border-radius: 2em 0em 0em 2em;
+    border-radius: 2em 2em 2em 2em;
     color: #191919;
-    margin: 0 10%;
 }
 
 .link-interno:hover, .link-interno:focus{
@@ -163,12 +174,87 @@ p {
 }
 
 .foto-perfil{
-    border-radius: 100%;
-    height: 15em;
-    width: 15em;
+    border-radius: 50%;
+    height: 10em;
+    width: 10em;
+}
+
+#foto-manfred{
+
+    width: 11em;
+    height: 12em;
+}
+
+.lista-link-interno{
+
+    display: flex;
+}
+
+
+/*flashcard css*/
+.div-flashcard{
+
+    background-color: #148CFC;
+    padding: 0.5em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin: 0.8em auto;
+    margin-bottom: 1em;
+    width: 30%;
+    border: 2px solid #35404b;
+    height: auto;
+}
+
+
+.div-flashcard > button{
+
+    align-items: flex-end;
+}
+
+.botao-flash{
+
+    align-items: flex-end;
+    justify-self: flex-end;
+    display: flex;
+    border: none;
+    background: none;
+    color: white;
+    margin-left: 90%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 700 ;
 }
 
 @media screen and (max-width: 900px) {
+    
+    .container-apresentacao-elementos {
+    
+        display: flex;
+        justify-content: space-around;
+        background-color: #148CFC;
+        width: 70%;
+        height: auto;
+        margin: 1em 0;
+        padding: 2em 2em 2em 2em;
+        border-radius: 1.5em 1.5em 1.5em 1.5em;
+        color: #191919;
+    }
+
+
+    .foto-perfil{
+
+        height: 8em;
+        width: 8em;
+    }
+    
+    #foto-manfred{
+    
+        width: 10em;
+        height: 10em;
+    }
 	   
     .container-card{
 
@@ -201,7 +287,7 @@ p {
 
     .label-titulo{
 
-        font-size: 1.5em;
+        font-size: 1.4em;
         text-indent: 0.5em;
     }
 

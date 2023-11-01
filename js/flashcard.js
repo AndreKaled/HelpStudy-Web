@@ -44,7 +44,10 @@ form.addEventListener('submit', (evento) =>{
 
 //criando e adicionando elemento com os dados na lista
 function criarElemento(item){
-    const novoItem = document.createElement('li');
+
+    const novoItem = document.createElement('div');
+
+    novoItem.classList.add("div-flashcard");
 
     const nomeItem = document.createElement('strong');
     nomeItem.innerHTML = item.titulo;
@@ -52,11 +55,12 @@ function criarElemento(item){
     //adicionando id do elemento para fazer busca e atualização
     nomeItem.dataset.id = item.id;
 
-    novoItem.appendChild(nomeItem);
+
     novoItem.innerHTML += item.resposta;
 
+    
+    novoItem.appendChild(nomeItem);
     novoItem.appendChild(botaoDeletar(item.id));
-
     lista.appendChild(novoItem);
 }
 function atualizarItem(item){
@@ -66,11 +70,13 @@ function atualizarItem(item){
 //adicionado botoes de exclusao para os itens
 function botaoDeletar(id){
     const elementBotao = document.createElement("button");
+
     elementBotao.innerText = "X"
 
     elementBotao.addEventListener("click", function(){
         deletaElemento(this.parentNode, id)
     })
+    elementBotao.classList.add("botao-flash")
 
     return elementBotao
 }

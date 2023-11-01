@@ -21,12 +21,13 @@ function enviaComentario(nome, email, comentario){
 	}).then((val) => (fechaCarregando(),
 			campoComentario.value = "",
 			campoEmail.value = "",
-			campoNome.value = "")
+			campoNome.value = "",
+			carregaComentarios())
 	).catch((err) => console.error(err));
 }
 
 function iniciaCarregando(){
-	document.getElementById("load").style.display = "inline"
+	document.getElementById("load-comentar").style.display = "inline"
 	campoComentario.disabled = true
 	campoNome.disabled = true
 	campoEmail.disabled = true
@@ -34,9 +35,36 @@ function iniciaCarregando(){
 }
 
 function fechaCarregando(){
-	document.getElementById('load').style.display = "none"
+	document.getElementById('load-comentar').style.display = "none"
 	campoComentario.disabled = false
 	campoNome.disabled = false
 	campoEmail.disabled = false
 	botao.disabled = false
+}
+
+function carregaComentarios(){
+	document.getElementById('load-comentarios').style.display = "inline"
+	firebase.firestore().collection('comentarios-web').get()
+	.then(snapshot => {
+		const comentarios = snapshot.docs.map(doc => doc.data())
+		criaComentario(comentarios)
+	})
+	document.getElementById('load-comentarios').style.display = "none"
+}
+
+carregaComentarios()
+
+function criaComentario(coment)
+{
+	var secao = document.getElementById("comentarios")
+	secao.innerText = ""
+	for(i=0; i < coment.length; i++){
+		var div = document.createElement("div")
+		var comentario = document.createElement("p")
+		
+		comentario.innerHTML = coment[i].nome +": " +coment[i].comentario
+	
+		div.appendChild(comentario)
+		secao.appendChild(div)
+	}
 }

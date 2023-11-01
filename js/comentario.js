@@ -27,16 +27,16 @@ function enviaComentario(nome, email, comentario){
 
 function iniciaCarregando(){
 	document.getElementById("load").style.display = "inline"
-	campoComentario.disabled = "false"
-	campoNome.disabled = "false"
-	campoEmail.disabled = "false"
-	botao.disabled = "false"
+	campoComentario.disabled = true
+	campoNome.disabled = true
+	campoEmail.disabled = true
+	botao.disabled = true
 }
 
 function fechaCarregando(){
 	document.getElementById('load').style.display = "none"
-	campoComentario.disabled = "true"
-	campoNome.disabled = "true"
-	campoEmail.disabled = "true"
-	botao.disabled = "true"
+	campoComentario.disabled = false
+	campoNome.disabled = false
+	campoEmail.disabled = false
+	botao.disabled = false
 }

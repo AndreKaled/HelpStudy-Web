@@ -192,23 +192,6 @@ p {
 
 
 /*flashcard css*/
-.div-flashcard{
-
-    background-color: #148CFC;
-    padding: 0.5em;
-    border-radius: 1em;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    margin: 0.8em auto;
-    margin-bottom: 1em;
-    width: 30%;
-    border: 2px solid #35404b;
-    height: auto;
-}
-
-
 .div-flashcard > button{
 
     align-items: flex-end;
@@ -291,11 +274,50 @@ p {
         text-indent: 0.5em;
     }
 
+    .div-flashcard{
+        padding: 0.5em;
+        border-radius: 1em;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        margin: 0.8em auto;
+        margin-bottom: 1em;
+        width: 30%;
+        height: auto;
+        perspective: 100px;
+        width: 400px;
+        height: 300px;
+    }
+      
+    .front, .back {
+        position: absolute;
+        padding: 10px;
+        border-radius: 10px;
+        border: 2px solid #35404b;
+        width: 100%;
+      }
 
-    /* .container-apresentacao-elementos{
-
-        ;
-    } */
-
+      .front{
+        background-color: #148CFC;
+        z-index: 1;
+        align-items: center;
+        justify-content: center;
+      }
+      .back {
+        background: rgb(61, 129, 197);
+        transform: rotateY(-180deg);
+        backface-visibility: hidden;
+      }
+      
+      .front:hover {
+        transform: rotateY(180deg);
+        z-index: 0;
+      }
+      
+      .front:hover .back {
+        transform: rotateY(0);
+        z-index: 1;
+      }
 
 }

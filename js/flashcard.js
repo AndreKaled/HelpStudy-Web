@@ -46,21 +46,29 @@ form.addEventListener('submit', (evento) =>{
 function criarElemento(item){
 
     const novoItem = document.createElement('div');
+    const itemFront = document.createElement('div');
+    const itemBack = document.createElement('div');
 
+    itemBack.classList.add("back");
+    itemFront.classList.add('front');
     novoItem.classList.add("div-flashcard");
 
     const nomeItem = document.createElement('strong');
     nomeItem.innerHTML = item.titulo;
+    
+    const respItem = document.createElement('strong');
+    respItem.innerHTML = item.resposta;
 
     //adicionando id do elemento para fazer busca e atualização
     nomeItem.dataset.id = item.id;
 
-
-    novoItem.innerHTML += item.resposta;
-
+    itemFront.appendChild(nomeItem);
+    itemBack.appendChild(respItem);
     
-    novoItem.appendChild(nomeItem);
+    novoItem.appendChild(itemFront);
+    novoItem.appendChild(itemBack);
     novoItem.appendChild(botaoDeletar(item.id));
+
     lista.appendChild(novoItem);
 }
 function atualizarItem(item){

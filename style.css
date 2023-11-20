@@ -24,13 +24,46 @@ header {
     width: 100%;
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 900px) {
+  
+  .nav-bloco-dois nav > a{
+    
+    font-size: 0.8em;
+    
+  }
+  
+  .nav-bloco-um a > img{
+    
+    width: 7em;
+    height: 2em;
+    padding: 0 1em;
+  }
+  
     section{
         max-width: 800px;
     
     }
     .label-texto{
         font-size: 0.8em;
+    }
+    
+    .container-introducao > p{
+      
+      font-size: 1em;
+    }
+    
+    footer > img{
+     
+      width: 7em;
+      height: 2em;
+      padding: 0 1em;
+      
+    }
+    
+    footer div > a{
+      
+      font-size: 0.8em;
+      
     }
 }
 
@@ -85,12 +118,15 @@ footer {
 p {
     margin: 10px 5px;
     text-align: justify;
+    
 }
 
 
-.container-introducao {
+.container-introducao{
     text-align: center;
+   
 }
+
 
 .container-introducao > .adicionar > .flash-submit{
 
@@ -100,7 +136,7 @@ p {
     border-radius: 0.5em;
     padding: 0.5em;
     border: none;
-    margin: 0.5em 0;
+    margin: 0.5em 0; 
 
 }
 
@@ -113,7 +149,7 @@ p {
 }
 
 .label-texto {
-    font-size: 1.25em;
+    font-size: 0.8em;
     margin: 4%;
     text-align: justify;
 }
@@ -145,7 +181,6 @@ p {
     border-radius: 50%;
     background-color: #09aa5cb6;
 }
-
 
 /*pagina de contatos*/
 
@@ -189,6 +224,34 @@ p {
 
     display: flex;
 }
+  
+  #botaoenviar{
+    
+    background-color: #5794f3;
+    color: white;
+    padding: 0.4em;
+    border-radius: 1em;
+    width: 20%;
+    border: none;
+    margin: 1em 0;
+   
+  }
+  
+  #form .label-texto > input{
+    
+    background-color: white;
+  }
+  
+  #form .label-texto{
+    
+    text-align: left;
+  }
+  
+  .adicionar > input{
+    
+    background-color: white;
+  }
+
 
 
 /*flashcard css*/
@@ -212,31 +275,52 @@ p {
 }
 
 @media screen and (max-width: 900px) {
+ 
     
     .container-apresentacao-elementos {
     
         display: flex;
         justify-content: space-around;
         background-color: #148CFC;
-        width: 70%;
+        width: 80%;
         height: auto;
         margin: 1em 0;
         padding: 2em 2em 2em 2em;
         border-radius: 1.5em 1.5em 1.5em 1.5em;
         color: #191919;
     }
+    
+    .container-apresentacao-elementos:last-child{
+      
+      margin-bottom: 5em;
+    }
+    
+    .container-apresentacao-elementos div > .label-titulo{
+      
+      font-size: 0.8em;
+    }
+    
+    
+      .lista-link-interno > a{
+       
+        font-size: 0.7em;
+     }
+     
+   
 
 
     .foto-perfil{
 
-        height: 8em;
-        width: 8em;
+        height: 7em;
+        width: 7em;
     }
     
     #foto-manfred{
     
-        width: 10em;
-        height: 10em;
+        width: 9em;
+        height: 7em;
+        border-radius: 50%;
+        
     }
 	   
     .container-card{

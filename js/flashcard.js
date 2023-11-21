@@ -48,26 +48,24 @@ function criarElemento(item){
     const novoItem = document.createElement('div');
     const itemFront = document.createElement('div');
     const itemBack = document.createElement('div');
+    const conteudoFront = document.createElement('div');
+    const conteudoBack = document.createElement('div');
 
-    itemBack.classList.add("back");
-    itemFront.classList.add('front');
-    novoItem.classList.add("div-flashcard");
+    itemBack.classList.add("resposta");
+    itemFront.classList.add('pergunta');
+    novoItem.classList.add("flashcard");
 
-    const nomeItem = document.createElement('strong');
-    nomeItem.innerHTML = item.titulo;
-    
-    const respItem = document.createElement('strong');
-    respItem.innerHTML = item.resposta;
+    conteudoFront.innerHTML += item.titulo;
+    conteudoBack.innerHTML += item.resposta;
 
     //adicionando id do elemento para fazer busca e atualização
-    nomeItem.dataset.id = item.id;
+    conteudoFront.dataset.id = item.id;
 
-    itemFront.appendChild(nomeItem);
-    itemBack.appendChild(respItem);
+    itemFront.appendChild(conteudoFront);
+    itemBack.appendChild(conteudoBack);
     
     novoItem.appendChild(itemFront);
     novoItem.appendChild(itemBack);
-    novoItem.appendChild(botaoDeletar(item.id));
 
     lista.appendChild(novoItem);
 }

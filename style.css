@@ -345,17 +345,19 @@ p {
 
     transform: rotateY(180deg);
   }
-
   .flashcard-cont, .pergunta, .resposta{
-
     width: 20em;
     height: 10em;
+    margin: 2em 0;
+
   }
 
   .flashcard{
 
     transition: 0.5s;
+    margin: 10em 0;
     transform-style: preserve-3d;
+
   }
 
   .pergunta{

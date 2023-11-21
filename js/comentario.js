@@ -4,6 +4,7 @@ campoNome = document.getElementById('nome')
 campoEmail = document.getElementById('email')
 campoComentario = document.getElementById('comentario')
 botao = document.getElementById('botaoenviar')
+numComentario = document.getElementById('num-comentarios')
 
 fechaCarregando()
 
@@ -46,10 +47,21 @@ function carregaComentarios(){
 	document.getElementById('load-comentarios').style.display = "inline"
 	firebase.firestore().collection('comentarios-web').get()
 	.then(snapshot => {
+
+		const cont = snapshot.size;
 		const comentarios = snapshot.docs.map(doc => doc.data())
 		criaComentario(comentarios)
+
+		setAllComentarios(cont)
 	})
+
+
 	document.getElementById('load-comentarios').style.display = "none"
+}
+
+function setAllComentarios(contagem){
+
+	numComentario.innerHTML = contagem.toString();
 }
 
 carregaComentarios()

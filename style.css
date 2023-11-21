@@ -116,7 +116,7 @@ footer {
 
 
 p {
-    margin: 10px 5px;
+    margin: 10px 1.5em;
     text-align: justify;
     
 }
@@ -149,7 +149,7 @@ p {
 }
 
 .label-texto {
-    font-size: 0.8em;
+    font-size: 1em;
     margin: 4%;
     text-align: justify;
 }
@@ -204,6 +204,18 @@ p {
     color: #191919;
 }
 
+#texto-sobre{
+
+    margin: 10px 3em
+}
+
+
+.container-apresentacao-elementos:last-child{
+
+
+    margin-bottom: 6em;
+}
+
 .link-interno:hover, .link-interno:focus{
     color: #191919;
 }
@@ -253,6 +265,14 @@ p {
   }
 
 
+  .comentario-label{
+
+
+    font-size: 1.3em;
+    margin: 2em;
+  }
+
+
 
 /*flashcard css*/
 .div-flashcard > button{
@@ -273,6 +293,108 @@ p {
     margin-bottom: 0;
     font-weight: 700 ;
 }
+
+/* pagina do flashcard */
+.div-flashcard{
+    padding: 0.5em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin: 0.8em auto;
+    margin-bottom: 1em;
+    width: 30%;
+    height: auto;
+    perspective: 100px;
+    width: 400px;
+    height: 9.35em;
+}
+  
+.front, .back {
+    position: absolute;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #35404b;
+    width: 100%;
+  }
+
+  .front{
+    background-color: #148CFC;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+  }
+  .back {
+    background: rgb(61, 129, 197);
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+  }
+  
+  .front:hover {
+    transform: rotateY(180deg);
+    z-index: 0;
+  }
+  
+  .front:hover .back {
+    transform: rotateY(0);
+    z-index: 1;
+  }
+
+  .flashcard-cont:hover .flashcard {
+
+    transform: rotateY(180deg);
+  }
+
+  .flashcard-cont, .pergunta, .resposta{
+
+    width: 20em;
+    height: 10em;
+  }
+
+  .flashcard{
+
+    transition: 0.5s;
+    transform-style: preserve-3d;
+  }
+
+  .pergunta{
+
+    z-index: 5;
+  }
+
+  .resposta{
+
+    transform: rotateY(180deg);
+  }
+
+  .pergunta, .resposta{
+
+
+    backface-visibility: hidden;
+    border: 1px solid #aaa;
+    border-radius: 1em;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    padding: 20%;
+  }
+
+  .pergunta{
+
+    background-color: #148CFC;
+  }
+
+  .resposta{
+
+    background-color: #5794f3;
+  }
+
+  .content{
+
+    padding-top:50%;
+    font-size: 2em;
+  }
 
 @media screen and (max-width: 900px) {
  

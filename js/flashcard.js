@@ -55,8 +55,8 @@ function criarElemento(item){
     itemFront.classList.add('pergunta');
     novoItem.classList.add("flashcard");
 
-    conteudoFront.innerHTML += item.titulo;
-    conteudoBack.innerHTML += item.resposta;
+    conteudoFront.innerHTML = item.titulo;
+    conteudoBack.innerHTML = item.resposta;
 
     //adicionando id do elemento para fazer busca e atualização
     conteudoFront.dataset.id = item.id;

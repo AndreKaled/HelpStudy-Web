@@ -295,6 +295,8 @@ p {
 }
 
 /* pagina do flashcard */
+
+
 .div-flashcard{
     padding: 0.5em;
     border-radius: 1em;
@@ -344,34 +346,31 @@ p {
   .flashcard-cont{
     display: flex;
     flex-direction: column;
-    
+
+    margin: 0 25%;
+  }
+
+
+  .flashcard-cont{
+
+    width: 100%;
+    margin: 0 39% !important;
   }
 
  .flashcard:hover {
-
     transform: rotateY(180deg);
+    transition: 1s;
   }
   .flashcard-cont, .pergunta, .resposta{
     width: 20em;
     height: 10em;
     margin: 2em 0;
-
   }
 
   .flashcard{
-
-    transition: 0.5s;
+    transition: 1s;
     margin: 10em 0;
     transform-style: preserve-3d;
-    margin: 15em 0;
-
-  }
-
-
-  .flashcard * .flashcard{
-
-
-    
   }
 
   .pergunta{
@@ -385,34 +384,34 @@ p {
   }
 
   .pergunta, .resposta{
-
-
     backface-visibility: hidden;
     border: 1px solid #aaa;
     border-radius: 1em;
-    margin: auto;
     position: absolute;
     text-align: center;
     padding: 20%;
   }
 
   .pergunta{
-
     background-color: #148CFC;
   }
 
   .resposta{
-
     background-color: #5794f3;
   }
 
-  .content{
-
+  .conteudo{
     padding-top:50%;
     font-size: 2em;
   }
 
 @media screen and (max-width: 900px) {
+
+  .flashcard-cont{
+
+    width: 100%;
+    margin: 0 33% !important;
+  }
  
     
     .container-apresentacao-elementos {

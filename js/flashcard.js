@@ -52,7 +52,7 @@ function criarElemento(item){
     const conteudoBack = document.createElement('div');
 
     itemBack.classList.add("resposta");
-    itemFront.classList.add('pergunta');
+    itemFront.classList.add("pergunta");
     novoItem.classList.add("flashcard");
 
     conteudoFront.innerHTML = item.titulo;
